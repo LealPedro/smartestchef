@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Menu</ion-title>
+   <ion-buttons end="">
+			<button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>
+				<ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>
+			</span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>
+		</ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-card>
+    <img src="../assets/massas.jpg" (click) = "goToCategorias()"/>
+    <div class="card-title">Massas</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="../assets/bebidas.jpg" (click) = "goToBebidas()"/>
+    <div class="card-title">Bebidas</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="../assets/sobremesa.jpg" (click) = "goToSobremesas()"/>
+    <div class="card-title">Sobremesas</div>
+  </ion-card>
+
+
+
+</ion-content>
