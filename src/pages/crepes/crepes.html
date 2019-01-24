@@ -29,18 +29,18 @@
   <ion-content class="cards-bg">
    
    
-    <ion-card>
+    <ion-card *ngFor="let produto of produtos">
   
       <div>
-        <img class="img" src="../assets/crepechocolate.jpg"/>
+        <img class="img" src="{{produto.imagem}}"/>
       </div>
   
       <ion-card-content>
         <ion-card-title>
-          Crepe de Chocolate
+          {{produto.nome}}
         </ion-card-title>
         <p>
-          Crepe de Chocolate com calda de chocolate.
+          {{produto.descricao}}
         </p>
        
       </ion-card-content>
@@ -48,7 +48,7 @@
       <ion-row no-padding>
         <ion-col>
             <p class="p1">
-                R$ 20,00
+                R$ {{produto.preco}}
               </p>
         </ion-col>
         <ion-col text-center>

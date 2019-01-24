@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 import { CarrinhoPage } from "../carrinho/carrinho";
+import { Produto } from '../../models/produto';
+import { HttpClient } from '@angular/common/http';
 
 /**
  * Generated class for the CardapiosobremesasPage page.
@@ -16,7 +19,15 @@ import { CarrinhoPage } from "../carrinho/carrinho";
 })
 export class CardapiosobremesasPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public produtos: Produto[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient) {
+    this._http.get<Produto[]>('http://localhost:8080/api/sobremesas')
+      .subscribe(
+          (produtos) => {
+            this.produtos = produtos;
+          }
+      );
   }
 
   ionViewDidLoad() {

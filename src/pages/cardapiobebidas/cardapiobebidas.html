@@ -31,26 +31,35 @@
 <ion-content class="cards-bg">
  
  
-  <ion-card>
+  <ion-card *ngFor="let produto of produtos">
 
     <div>
-      <img class="img" src="../assets/coca.png"/>
+      <img class="img" src="{{produto.imagem}}"/>
     </div>
 
     <ion-card-content>
       <ion-card-title>
-        Coca-Cola
+        {{produto.nome}}
       </ion-card-title>
       <p>
-        Refrigerante.
+        {{produto.descricao}}
       </p>
+
+      <!-- <ion-item>
+      <ion-label>{{produto.descricao}}</ion-label>
+      <ion-select [(ngModel)]="tamanho" interface="popover">
+        <ion-option value="nes">350 ml</ion-option>
+        <ion-option value="n64">600 ml</ion-option>
+        <ion-option value="ps">2 L</ion-option>
+      </ion-select>
+    </ion-item>-->
       
     </ion-card-content>
 
     <ion-row no-padding>
       <ion-col>
           <p class="p1">
-              R$ 20,00
+              R$ {{produto.preco}}
             </p>
       </ion-col>
       <ion-col text-center>

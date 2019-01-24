@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
+import { HttpClientModule } from '@angular/common/http';
+
 import { CardapiobebidasPage } from './cardapiobebidas';
 
 @NgModule({
@@ -8,6 +10,7 @@ import { CardapiobebidasPage } from './cardapiobebidas';
   ],
   imports: [
     IonicPageModule.forChild(CardapiobebidasPage),
+    HttpClientModule
   ],
 })
 export class CardapiobebidasPageModule {}

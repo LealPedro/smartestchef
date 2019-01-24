@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http'; 
+
 import { CarrinhoPage } from "../carrinho/carrinho";
+import { Produto } from '../../models/produto';
 
 /**
  * Generated class for the CardapiobebidasPage page.
@@ -15,9 +18,19 @@ import { CarrinhoPage } from "../carrinho/carrinho";
   templateUrl: 'cardapiobebidas.html',
 })
 export class CardapiobebidasPage {
+
+  public produtos: Produto[];
+  
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient) {
+    this._http.get<Produto[]>("ws/listBebidas")
+      .subscribe(
+          (produtos: any) => {
+            //this.produtos = produtos;
+            console.log(produtos);
+          }
+      );
   }
 
   ionViewDidLoad() {
@@ -27,5 +40,6 @@ export class CardapiobebidasPage {
   goToCarrinho() {
     this.navCtrl.push(CarrinhoPage);
   }
+
 
 }
