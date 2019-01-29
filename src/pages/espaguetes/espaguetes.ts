@@ -21,7 +21,7 @@ export class EspaguetesPage {
   public produtos: Produto[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient) {
-    this._http.get<Produto[]>('http://localhost:8080/api/espaguetes')
+    this._http.get<Produto[]>('/ws/espaguetes')
       .subscribe(
           (produtos) => {
             this.produtos = produtos;

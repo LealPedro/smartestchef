@@ -72,7 +72,7 @@ var ResultadobuscaPage = /** @class */ (function () {
     };
     ResultadobuscaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-resultadobusca',template:/*ion-inline-start:"C:\nodespace\projetofinal\src\pages\resultadobusca\resultadobusca.html"*/'<!--\n  Generated template for the ResultadobuscaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>resultadobusca</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\nodespace\projetofinal\src\pages\resultadobusca\resultadobusca.html"*/,
+            selector: 'page-resultadobusca',template:/*ion-inline-start:"C:\Users\51118502017.1\projetofinal\src\pages\resultadobusca\resultadobusca.html"*/'<!--\n  Generated template for the ResultadobuscaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>resultadobusca</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\51118502017.1\projetofinal\src\pages\resultadobusca\resultadobusca.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], ResultadobuscaPage);

@@ -22,7 +22,7 @@ export class PizzassalgadasPage {
   public produtos: Produto[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient) {
-    this._http.get<Produto[]>('http://localhost:8080/api/pizzas/salgadas')
+    this._http.get<Produto[]>('/ws/pizza/salgadas')
       .subscribe(
           (produtos) => {
             this.produtos = produtos;

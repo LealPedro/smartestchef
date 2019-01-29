@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+composer.phar
+/vendor/
+
+# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# composer.lock
+>>>>>>> dbd8d183cd9feb95b3afade9c97ad50a4818f33d
 *~
 *.sw[mnpcod]
 *.log
@@ -54,4 +63,8 @@ demos/src/**/*.css.shim.ts
 angular/css/
 core/css/
 core/loader/
+<<<<<<< HEAD
 .stencil/
+=======
+.stencil/
+>>>>>>> dbd8d183cd9feb95b3afade9c97ad50a4818f33d

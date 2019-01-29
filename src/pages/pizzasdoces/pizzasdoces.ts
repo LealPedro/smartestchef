@@ -20,9 +20,14 @@ import { HttpClient } from '@angular/common/http';
 export class PizzasdocesPage {
 
   public produtos: Produto[];
+  pizzas;
+  txtSabor;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient) {
-    this._http.get<Produto[]>('http://localhost:8080/api/pizzas/doces')
+  }
+
+  listaPizzas() {
+    this._http.get<Produto[]>('/ws/pizza/doces')
       .subscribe(
           (produtos) => {
             this.produtos = produtos;
@@ -30,8 +35,23 @@ export class PizzasdocesPage {
       );
   }
 
+  localizarPizza() {
+      // Reset items back to all of the items
+      this.pizzas = Array.of(this.listaPizzas());
+
+      // set val to the value of the ev target
+      var sabor = this.txtSabor;
+
+      // if the value is an empty string don't filter the items
+      if (sabor && sabor.trim() != '') {
+        this.pizzas = this.pizzas.filter((pizza) => {
+          return (pizza.toLowerCase().indexOf(sabor.toLowerCase()) > -1);
+        })
+      }
+    }
+ 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PizzasdocesPage');
+    this.listaPizzas();
   }
 
    goToCarrinho() {

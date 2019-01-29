@@ -21,9 +21,8 @@
 <ion-content padding>
 
     <ion-searchbar
-    [(ngModel)]="myInput"
-    [showCancelButton]="shouldShowCancel"
-    >
+    (ionInput)="localizarPizza()" [(ngModel)] = "txtSabor"
+    [showCancelButton]="shouldShowCancel" (enter)="localizarPizza()">
   </ion-searchbar>
   
   <ion-content class="cards-bg">
@@ -32,7 +31,7 @@
     <ion-card *ngFor="let produto of produtos">
   
       <div>
-        <img class="img" src="{{produto.imagem}}"/>
+        <img class="img" src="/ws/fotos/{{produto.imagem}}"/>
       </div>
   
       <ion-card-content>
