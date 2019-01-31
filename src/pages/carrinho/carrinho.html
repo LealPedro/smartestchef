@@ -17,7 +17,7 @@
 
         <ion-item *ngFor="let item of itens">
           <ion-thumbnail item-start>
-            <img src="{{item.produto.imagem}}">
+            <img src="/ws/fotos/{{item.produto.imagem}}">
           </ion-thumbnail>
           <h2>{{item.produto.nome}}</h2>
           <p>R${{item.produto.preco}}</p>
@@ -52,7 +52,7 @@
           <span *ngIf="total() > 0">
             <p class="p2">Total: R${{total()}}</p>            
           </span>
-          <button class="b" ion-button full (click)="checkout()">Checkout</button>
+          <button class="b" ion-button full (click)="checkout()">Continuar Comprando</button>
         </ion-footer>
      
   

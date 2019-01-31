@@ -28,7 +28,7 @@ export class CardapiosobremesasPage {
   public produtos: Produto[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient, public cartService: CartService) {
-    this._http.get<Produto[]>('http://localhost:8080/api/sobremesas')
+    this._http.get<Produto[]>('/ws/sobremesas')
       .subscribe(
           (produtos) => {
             this.produtos = produtos;

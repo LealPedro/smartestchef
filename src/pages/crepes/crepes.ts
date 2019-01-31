@@ -27,7 +27,7 @@ export class CrepesPage {
    public produtos: Produto[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient, public cartService: CartService) {
-    this._http.get<Produto[]>('http://localhost:8080/api/crepes')
+    this._http.get<Produto[]>('/ws/crepes')
       .subscribe(
           (produtos) => {
             this.produtos = produtos;
