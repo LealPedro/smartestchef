@@ -4,6 +4,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { CarrinhoPage } from "../carrinho/carrinho";
 import { Produto } from '../../models/produto';
+import { CartService } from "../../services/cart.service";
+import { StorageService } from "../../services/storage.service";
 
 /**
  * Generated class for the PizzassalgadasPage page.
@@ -16,12 +18,16 @@ import { Produto } from '../../models/produto';
 @Component({
   selector: 'page-pizzassalgadas',
   templateUrl: 'pizzassalgadas.html',
+  providers:[
+    CartService,
+    StorageService
+  ]
 })
 export class PizzassalgadasPage {
 
   public produtos: Produto[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient, public cartService: CartService) {
     this._http.get<Produto[]>('/ws/pizza/salgadas')
       .subscribe(
           (produtos) => {
@@ -30,11 +36,18 @@ export class PizzassalgadasPage {
       );
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PizzassalgadasPage');
+  ionViewDidLoad() {}
+
+  
+
+  addToCart(produto: Produto) {
+    this.cartService.addProduto(produto);
+    this.navCtrl.push('CarrinhoPage');
   }
 
-  goToCarrinho() {
+  /*addProduto() {
+    p = new Produto();
+    p.id= this.id;
     this.navCtrl.push(CarrinhoPage);
-  }
+  }*/
 }

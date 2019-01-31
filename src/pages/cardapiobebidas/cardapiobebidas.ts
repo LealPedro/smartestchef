@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { CarrinhoPage } from "../carrinho/carrinho";
 import { Produto } from '../../models/produto';
+import { CartService } from "../../services/cart.service";
+import { StorageService } from "../../services/storage.service";
 
 /**
  * Generated class for the CardapiobebidasPage page.
@@ -16,6 +18,10 @@ import { Produto } from '../../models/produto';
 @Component({
   selector: 'page-cardapiobebidas',
   templateUrl: 'cardapiobebidas.html',
+  providers:[
+    CartService,
+    StorageService
+  ]
 })
 export class CardapiobebidasPage {
 
@@ -23,7 +29,7 @@ export class CardapiobebidasPage {
   
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient, public cartService: CartService) {
     this._http.get<Produto[]>("ws/listBebidas")
       .subscribe(
           (produtos: any) => {
@@ -37,8 +43,9 @@ export class CardapiobebidasPage {
     console.log('ionViewDidLoad CardapiobebidasPage');
   }
 
-  goToCarrinho() {
-    this.navCtrl.push(CarrinhoPage);
+  addToCart(produto: Produto) {
+    this.cartService.addProduto(produto);
+    this.navCtrl.push('CarrinhoPage');
   }
 
 

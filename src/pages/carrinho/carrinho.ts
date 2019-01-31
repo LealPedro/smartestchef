@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Produto } from "../../models/produto";
+import { CartService } from "../../services/cart.service";
+import { CartItem } from "../../models/cart-item";
+import { MenuPage } from "../../pages/menu/menu";
+import { StorageService } from "../../services/storage.service";
 
 /**
  * Generated class for the CarrinhoPage page.
@@ -12,23 +17,46 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-carrinho',
   templateUrl: 'carrinho.html',
+  providers:[
+    CartService,
+    StorageService
+  ]
 })
 export class CarrinhoPage {
 
+  itens: CartItem[];
+
   private currentNumber = 0;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public cartService: CartService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CarrinhoPage');
+    let cart = this.cartService.getCart();
+    this.itens = cart.itens;
   }
 
-  private increment () {
-    this.currentNumber++;
+  removeItem(produto: Produto) {
+    this.itens = this.cartService.removeProduto(produto).itens;
   }
-  
-  private decrement () {
-    this.currentNumber--;
+
+  increaseQuantity(produto: Produto) {
+    this.itens = this.cartService.increaseQuantity(produto).itens;
+  }
+
+  decreaseQuantity(produto: Produto) {
+    this.itens = this.cartService.decreaseQuantity(produto).itens;
+  }
+
+  total(): number {
+    return this.cartService.total();
+  }
+
+  goOn(){
+    this.navCtrl.setRoot('CategoriasPage');
+  }
+
+  checkout(){
+    this.navCtrl.setRoot('MenuPage');
   }
 
 }

@@ -18,6 +18,8 @@ import { PizzasdocesPageModule } from '../pages/pizzasdoces/pizzasdoces.module';
 import { CrepesPageModule } from '../pages/crepes/crepes.module';
 import { EspaguetesPageModule } from '../pages/espaguetes/espaguetes.module';
 import { CarrinhoPageModule } from '../pages/carrinho/carrinho.module';
+import { CartService } from "../services/cart.service";
+import { StorageService } from "../services/storage.service";
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { CarrinhoPageModule } from '../pages/carrinho/carrinho.module';
     CrepesPageModule,
     CarrinhoPageModule,
     EspaguetesPageModule,
-    CardapiobebidasPageModule
+    CardapiobebidasPageModule,
+    CarrinhoPageModule
     
   ],
   bootstrap: [IonicApp],
@@ -46,6 +49,8 @@ import { CarrinhoPageModule } from '../pages/carrinho/carrinho.module';
   providers: [
     StatusBar,
     SplashScreen,
+    CartService,
+    StorageService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

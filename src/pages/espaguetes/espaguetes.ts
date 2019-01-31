@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CarrinhoPage } from "../carrinho/carrinho";
 import { HttpClient } from "@angular/common/http";
 import { Produto } from "../../models/produto";
+import { CartService } from "../../services/cart.service";
+import { StorageService } from "../../services/storage.service";
 
 /**
  * Generated class for the EspaguetesPage page.
@@ -15,12 +17,16 @@ import { Produto } from "../../models/produto";
 @Component({
   selector: 'page-espaguetes',
   templateUrl: 'espaguetes.html',
+  providers:[
+    CartService,
+    StorageService
+  ]
 })
 export class EspaguetesPage {
 
   public produtos: Produto[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient, public cartService: CartService) {
     this._http.get<Produto[]>('/ws/espaguetes')
       .subscribe(
           (produtos) => {
@@ -30,11 +36,12 @@ export class EspaguetesPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EspaguetesPage');
+    
   }
 
-  goToCarrinho() {
-    this.navCtrl.push(CarrinhoPage);
+  addToCart(produto: Produto) {
+    this.cartService.addProduto(produto);
+    this.navCtrl.push('CarrinhoPage');
   }
 
 }

@@ -4,6 +4,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CarrinhoPage } from "../carrinho/carrinho";
 import { Produto } from '../../models/produto';
 import { HttpClient } from '@angular/common/http';
+import { CartService } from "../../services/cart.service";
+import { StorageService } from "../../services/storage.service";
 
 /**
  * Generated class for the PizzasdocesPage page.
@@ -16,6 +18,10 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'page-pizzasdoces',
   templateUrl: 'pizzasdoces.html',
+  providers:[
+    CartService,
+    StorageService
+  ]
 })
 export class PizzasdocesPage {
 
@@ -23,10 +29,10 @@ export class PizzasdocesPage {
   pizzas;
   txtSabor;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient, public cartService: CartService) {
   }
 
-  listaPizzas() {
+   listaPizzas() {
     this._http.get<Produto[]>('/ws/pizza/doces')
       .subscribe(
           (produtos) => {
@@ -54,7 +60,8 @@ export class PizzasdocesPage {
     this.listaPizzas();
   }
 
-   goToCarrinho() {
-    this.navCtrl.push(CarrinhoPage);
+   addToCart(produto: Produto) {
+    this.cartService.addProduto(produto);
+    this.navCtrl.push('CarrinhoPage');
   }
 }

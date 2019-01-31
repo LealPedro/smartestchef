@@ -4,6 +4,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CarrinhoPage } from "../carrinho/carrinho";
 import { Produto } from '../../models/produto';
 import { HttpClient } from '@angular/common/http';
+import { CartService } from "../../services/cart.service";
+import { StorageService } from "../../services/storage.service";
 
 /**
  * Generated class for the CardapiosobremesasPage page.
@@ -16,12 +18,16 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'page-cardapiosobremesas',
   templateUrl: 'cardapiosobremesas.html',
+  providers:[
+    CartService,
+    StorageService
+  ]
 })
 export class CardapiosobremesasPage {
 
   public produtos: Produto[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient, public cartService: CartService) {
     this._http.get<Produto[]>('http://localhost:8080/api/sobremesas')
       .subscribe(
           (produtos) => {
@@ -30,12 +36,11 @@ export class CardapiosobremesasPage {
       );
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CardapiosobremesasPage');
-  }
+  ionViewDidLoad() {  }
 
-  goToCarrinho() {
-    this.navCtrl.push(CarrinhoPage);
+  addToCart(produto: Produto) {
+    this.cartService.addProduto(produto);
+    this.navCtrl.push('CarrinhoPage');
   }
 
 }

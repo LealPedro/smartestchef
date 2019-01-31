@@ -15,22 +15,22 @@
   <ion-content>
     <ion-list>
 
-        <ion-item>
+        <ion-item *ngFor="let item of itens">
           <ion-thumbnail item-start>
-            <img src="../assets/calabresa.jpg">
+            <img src="{{item.produto.imagem}}">
           </ion-thumbnail>
-          <h2>Pizza de Calabresa</h2>
-          <p>R$ 20,00</p>
+          <h2>{{item.produto.nome}}</h2>
+          <p>R${{item.produto.preco}}</p>
           <p>Tamanho</p>
           <ion-row>
           <ion-buttons>
-              <button class="button1" icon-only="" ion-button="" (click)="decrement()"> 
+              <button class="button1" icon-only="" ion-button="" (click)="decreaseQuantity(item.produto)"> 
                 <ion-icon  name="remove-circle" ></ion-icon>
               </button>
             </ion-buttons>
-            <p class="p1">{{currentNumber}}</p>
+            <p class="p1">{{item.quantidade}}</p>
             <ion-buttons>
-                <button class="button2" icon-only="" ion-button="" (click)="increment()">
+                <button class="button2" icon-only="" ion-button="" (click)="increaseQuantity(item.produto)">
                   <ion-icon name="add-circle" ></ion-icon>
                 </button>
               </ion-buttons>
@@ -46,8 +46,13 @@
     </ion-content>
 
         <ion-footer class="footer">
-            <p class="p2">Total: R$ 20,00</p>
-          <button class="b" ion-button full>Checkout</button>
+          <ion-item *ngIf="total() <= 0">
+            <h2>Seu carrinho está vazio</h2>
+          </ion-item>
+          <span *ngIf="total() > 0">
+            <p class="p2">Total: R${{total()}}</p>            
+          </span>
+          <button class="b" ion-button full (click)="checkout()">Checkout</button>
         </ion-footer>
      
   
