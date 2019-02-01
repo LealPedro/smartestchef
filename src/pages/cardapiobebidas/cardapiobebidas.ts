@@ -30,11 +30,10 @@ export class CardapiobebidasPage {
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _http: HttpClient, public cartService: CartService) {
-    this._http.get<Produto[]>("ws/listBebidas")
+    this._http.get<Produto[]>('/ws/bebidas')
       .subscribe(
-          (produtos: any) => {
-            //this.produtos = produtos;
-            console.log(produtos);
+          (produtos) => {
+            this.produtos = produtos;
           }
       );
   }

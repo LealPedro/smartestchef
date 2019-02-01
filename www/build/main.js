@@ -22,10 +22,10 @@ webpackEmptyAsyncContext.id = 114;
 
 var map = {
 	"../pages/cardapiobebidas/cardapiobebidas.module": [
-		157
+		159
 	],
 	"../pages/cardapiosobremesas/cardapiosobremesas.module": [
-		159
+		157
 	],
 	"../pages/carrinho/carrinho.module": [
 		161
@@ -38,16 +38,16 @@ var map = {
 		1
 	],
 	"../pages/crepes/crepes.module": [
-		169
-	],
-	"../pages/espaguetes/espaguetes.module": [
 		168
 	],
+	"../pages/espaguetes/espaguetes.module": [
+		169
+	],
 	"../pages/menu/menu.module": [
-		171
+		170
 	],
 	"../pages/pizzasdoces/pizzasdoces.module": [
-		170
+		172
 	],
 	"../pages/pizzassalgadas/pizzassalgadas.module": [
 		173
@@ -78,11 +78,116 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CardapiosobremesasPageModule", function() { return CardapiosobremesasPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cardapiosobremesas__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var CardapiosobremesasPageModule = /** @class */ (function () {
+    function CardapiosobremesasPageModule() {
+    }
+    CardapiosobremesasPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__cardapiosobremesas__["a" /* CardapiosobremesasPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cardapiosobremesas__["a" /* CardapiosobremesasPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */]
+            ],
+        })
+    ], CardapiosobremesasPageModule);
+    return CardapiosobremesasPageModule;
+}());
+
+//# sourceMappingURL=cardapiosobremesas.module.js.map
+
+/***/ }),
+
+/***/ 158:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CardapiosobremesasPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_cart_service__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_storage_service__ = __webpack_require__(22);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the CardapiosobremesasPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CardapiosobremesasPage = /** @class */ (function () {
+    function CardapiosobremesasPage(navCtrl, navParams, _http, cartService) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this._http = _http;
+        this.cartService = cartService;
+        this._http.get('/ws/sobremesas')
+            .subscribe(function (produtos) {
+            _this.produtos = produtos;
+        });
+    }
+    CardapiosobremesasPage.prototype.ionViewDidLoad = function () { };
+    CardapiosobremesasPage.prototype.addToCart = function (produto) {
+        this.cartService.addProduto(produto);
+        this.navCtrl.push('CarrinhoPage');
+    };
+    CardapiosobremesasPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-cardapiosobremesas',template:/*ion-inline-start:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\cardapiosobremesas\cardapiosobremesas.html"*/'<!--\n\n  Generated template for the CardapiosobremesasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Sobremesas</ion-title>\n\n    <ion-buttons end="">\n\n			<button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n				<ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n			</span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n		</ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-searchbar\n\n  [(ngModel)]="myInput"\n\n  [showCancelButton]="shouldShowCancel"\n\n  >\n\n</ion-searchbar>\n\n\n\n<ion-content class="cards-bg">\n\n \n\n \n\n  <ion-card *ngFor="let produto of produtos">\n\n\n\n    <div>\n\n      <img class="img" src="/ws/fotos/{{produto.imagem}}"/>\n\n    </div>\n\n\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n        {{produto.nome}}\n\n      </ion-card-title>\n\n      <p>\n\n        {{produto.descricao}}\n\n      </p>\n\n   \n\n    </ion-card-content>\n\n\n\n    <ion-row no-padding>\n\n      <ion-col>\n\n          <p class="p1">\n\n              R$ {{produto.preco}}\n\n            </p>\n\n      </ion-col>\n\n      <ion-col text-center>\n\n        <button ion-button clear small color="danger" icon-start>\n\n          \n\n        </button>\n\n      </ion-col>\n\n      <ion-col text-right>\n\n        <button class="button" ion-button clear small icon-start (click)="addToCart(produto)">\n\n          <ion-icon name=\'cart\'></ion-icon>\n\n         \n\n        </button>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n\n\n</ion-content>\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\cardapiosobremesas\cardapiosobremesas.html"*/,
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_3__services_cart_service__["a" /* CartService */],
+                __WEBPACK_IMPORTED_MODULE_4__services_storage_service__["a" /* StorageService */]
+            ]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__services_cart_service__["a" /* CartService */]])
+    ], CardapiosobremesasPage);
+    return CardapiosobremesasPage;
+}());
+
+//# sourceMappingURL=cardapiosobremesas.js.map
+
+/***/ }),
+
+/***/ 159:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CardapiobebidasPageModule", function() { return CardapiobebidasPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cardapiobebidas__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cardapiobebidas__ = __webpack_require__(160);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -114,7 +219,7 @@ var CardapiobebidasPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 158:
+/***/ 160:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -165,7 +270,7 @@ var CardapiobebidasPage = /** @class */ (function () {
     };
     CardapiobebidasPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cardapiobebidas',template:/*ion-inline-start:"C:\nodespace\smartestchef\src\pages\cardapiobebidas\cardapiobebidas.html"*/'<!--\n\n  Generated template for the CardapiobebidasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Bebidas</ion-title>\n\n    <ion-buttons end="">\n\n			<button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n				<ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n			</span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n		</ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-searchbar\n\n  [(ngModel)]="myInput"\n\n  [showCancelButton]="shouldShowCancel"\n\n  >\n\n</ion-searchbar>\n\n\n\n<ion-content class="cards-bg">\n\n \n\n \n\n  <ion-card *ngFor="let produto of produtos">\n\n\n\n    <div>\n\n      <img class="img" src="/ws/fotos/{{produto.imagem}}"/>\n\n    </div>\n\n\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n        {{produto.nome}}\n\n      </ion-card-title>\n\n      <p>\n\n        {{produto.descricao}}\n\n      </p>\n\n\n\n      <!-- <ion-item>\n\n      <ion-label>{{produto.descricao}}</ion-label>\n\n      <ion-select [(ngModel)]="tamanho" interface="popover">\n\n        <ion-option value="nes">350 ml</ion-option>\n\n        <ion-option value="n64">600 ml</ion-option>\n\n        <ion-option value="ps">2 L</ion-option>\n\n      </ion-select>\n\n    </ion-item>-->\n\n      \n\n    </ion-card-content>\n\n\n\n    <ion-row no-padding>\n\n      <ion-col>\n\n          <p class="p1">\n\n              R$ {{produto.preco}}\n\n            </p>\n\n      </ion-col>\n\n      <ion-col text-center>\n\n        <button ion-button clear small color="danger" icon-start>\n\n          \n\n        </button>\n\n      </ion-col>\n\n      <ion-col text-right>\n\n        <button class="button" ion-button clear small icon-start (click)="addToCart(produto)">\n\n          <ion-icon name=\'cart\'></ion-icon>\n\n         \n\n        </button>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n\n\n</ion-content>\n\n\n\n\n\n'/*ion-inline-end:"C:\nodespace\smartestchef\src\pages\cardapiobebidas\cardapiobebidas.html"*/,
+            selector: 'page-cardapiobebidas',template:/*ion-inline-start:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\cardapiobebidas\cardapiobebidas.html"*/'<!--\n\n  Generated template for the CardapiobebidasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Bebidas</ion-title>\n\n    <ion-buttons end="">\n\n			<button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n				<ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n			</span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n		</ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-searchbar\n\n  [(ngModel)]="myInput"\n\n  [showCancelButton]="shouldShowCancel"\n\n  >\n\n</ion-searchbar>\n\n\n\n<ion-content class="cards-bg">\n\n \n\n \n\n  <ion-card *ngFor="let produto of produtos">\n\n\n\n    <div>\n\n      <img class="img" src="/ws/fotos/{{produto.imagem}}"/>\n\n    </div>\n\n\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n        {{produto.nome}}\n\n      </ion-card-title>\n\n      <p>\n\n        {{produto.descricao}}\n\n      </p>\n\n\n\n      <!-- <ion-item>\n\n      <ion-label>{{produto.descricao}}</ion-label>\n\n      <ion-select [(ngModel)]="tamanho" interface="popover">\n\n        <ion-option value="nes">350 ml</ion-option>\n\n        <ion-option value="n64">600 ml</ion-option>\n\n        <ion-option value="ps">2 L</ion-option>\n\n      </ion-select>\n\n    </ion-item>-->\n\n      \n\n    </ion-card-content>\n\n\n\n    <ion-row no-padding>\n\n      <ion-col>\n\n          <p class="p1">\n\n              R$ {{produto.preco}}\n\n            </p>\n\n      </ion-col>\n\n      <ion-col text-center>\n\n        <button ion-button clear small color="danger" icon-start>\n\n          \n\n        </button>\n\n      </ion-col>\n\n      <ion-col text-right>\n\n        <button class="button" ion-button clear small icon-start (click)="addToCart(produto)">\n\n          <ion-icon name=\'cart\'></ion-icon>\n\n         \n\n        </button>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n\n\n</ion-content>\n\n\n\n\n\n'/*ion-inline-end:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\cardapiobebidas\cardapiobebidas.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__services_cart_service__["a" /* CartService */],
                 __WEBPACK_IMPORTED_MODULE_4__services_storage_service__["a" /* StorageService */]
@@ -177,111 +282,6 @@ var CardapiobebidasPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=cardapiobebidas.js.map
-
-/***/ }),
-
-/***/ 159:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CardapiosobremesasPageModule", function() { return CardapiosobremesasPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cardapiosobremesas__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-var CardapiosobremesasPageModule = /** @class */ (function () {
-    function CardapiosobremesasPageModule() {
-    }
-    CardapiosobremesasPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cardapiosobremesas__["a" /* CardapiosobremesasPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cardapiosobremesas__["a" /* CardapiosobremesasPage */]),
-                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */]
-            ],
-        })
-    ], CardapiosobremesasPageModule);
-    return CardapiosobremesasPageModule;
-}());
-
-//# sourceMappingURL=cardapiosobremesas.module.js.map
-
-/***/ }),
-
-/***/ 160:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CardapiosobremesasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_cart_service__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_storage_service__ = __webpack_require__(22);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the CardapiosobremesasPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var CardapiosobremesasPage = /** @class */ (function () {
-    function CardapiosobremesasPage(navCtrl, navParams, _http, cartService) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this._http = _http;
-        this.cartService = cartService;
-        this._http.get('/ws/sobremesas')
-            .subscribe(function (produtos) {
-            _this.produtos = produtos;
-        });
-    }
-    CardapiosobremesasPage.prototype.ionViewDidLoad = function () { };
-    CardapiosobremesasPage.prototype.addToCart = function (produto) {
-        this.cartService.addProduto(produto);
-        this.navCtrl.push('CarrinhoPage');
-    };
-    CardapiosobremesasPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cardapiosobremesas',template:/*ion-inline-start:"C:\nodespace\smartestchef\src\pages\cardapiosobremesas\cardapiosobremesas.html"*/'<!--\n\n  Generated template for the CardapiosobremesasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Sobremesas</ion-title>\n\n    <ion-buttons end="">\n\n			<button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n				<ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n			</span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n		</ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-searchbar\n\n  [(ngModel)]="myInput"\n\n  [showCancelButton]="shouldShowCancel"\n\n  >\n\n</ion-searchbar>\n\n\n\n<ion-content class="cards-bg">\n\n \n\n \n\n  <ion-card *ngFor="let produto of produtos">\n\n\n\n    <div>\n\n      <img class="img" src="/ws/fotos/{{produto.imagem}}"/>\n\n    </div>\n\n\n\n    <ion-card-content>\n\n      <ion-card-title>\n\n        {{produto.nome}}\n\n      </ion-card-title>\n\n      <p>\n\n        {{produto.descricao}}\n\n      </p>\n\n   \n\n    </ion-card-content>\n\n\n\n    <ion-row no-padding>\n\n      <ion-col>\n\n          <p class="p1">\n\n              R$ {{produto.preco}}\n\n            </p>\n\n      </ion-col>\n\n      <ion-col text-center>\n\n        <button ion-button clear small color="danger" icon-start>\n\n          \n\n        </button>\n\n      </ion-col>\n\n      <ion-col text-right>\n\n        <button class="button" ion-button clear small icon-start (click)="addToCart(produto)">\n\n          <ion-icon name=\'cart\'></ion-icon>\n\n         \n\n        </button>\n\n      </ion-col>\n\n    </ion-row>\n\n\n\n  </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n\n\n</ion-content>\n\n\n\n\n\n\n\n'/*ion-inline-end:"C:\nodespace\smartestchef\src\pages\cardapiosobremesas\cardapiosobremesas.html"*/,
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_3__services_cart_service__["a" /* CartService */],
-                __WEBPACK_IMPORTED_MODULE_4__services_storage_service__["a" /* StorageService */]
-            ]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__services_cart_service__["a" /* CartService */]])
-    ], CardapiosobremesasPage);
-    return CardapiosobremesasPage;
-}());
-
-//# sourceMappingURL=cardapiosobremesas.js.map
 
 /***/ }),
 
@@ -420,7 +420,7 @@ var CategoriamassasPage = /** @class */ (function () {
     };
     CategoriamassasPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-categoriamassas',template:/*ion-inline-start:"C:\nodespace\smartestchef\src\pages\categoriamassas\categoriamassas.html"*/'<!--\n\n  Generated template for the CategoriamassasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Categorias</ion-title>\n\n    <ion-buttons end="">\n\n			<button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n				<ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n			</span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n    </ion-buttons>\n\n    \n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content padding>\n\n\n\n<ion-searchbar\n\n[(ngModel)]="myInput"\n\n[showCancelButton]="shouldShowCancel"\n\n>\n\n</ion-searchbar>\n\n\n\n<ion-content class="card-background-page">\n\n  <ion-card>\n\n    <img src="../assets/pizzasalgada.jpg" (click) = "goToPizzasSalgadas()"/>\n\n    <div class="card-title">Pizzas Salgadas</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="../assets/pizzadoce.jpg" (click) = "goToPizzasDoces()"/>\n\n    <div class="card-title">Pizzas Doces</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="../assets/espagueti.jpg" (click) = "goToEspaguetes()"/>\n\n    <div class="card-title">Espaguetes</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="../assets/crepe.jpg" (click) = "goToCrepes()"/>\n\n    <div class="card-title">Crepes</div>\n\n  </ion-card>\n\n\n\n</ion-content>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\nodespace\smartestchef\src\pages\categoriamassas\categoriamassas.html"*/,
+            selector: 'page-categoriamassas',template:/*ion-inline-start:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\categoriamassas\categoriamassas.html"*/'<!--\n\n  Generated template for the CategoriamassasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Categorias</ion-title>\n\n    <ion-buttons end="">\n\n			<button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n				<ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n			</span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n    </ion-buttons>\n\n    \n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n<ion-content padding>\n\n\n\n<ion-searchbar\n\n[(ngModel)]="myInput"\n\n[showCancelButton]="shouldShowCancel"\n\n>\n\n</ion-searchbar>\n\n\n\n<ion-content class="card-background-page">\n\n  <ion-card>\n\n    <img src="../assets/pizzasalgada.jpg" (click) = "goToPizzasSalgadas()"/>\n\n    <div class="card-title">Pizzas Salgadas</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="../assets/pizzadoce.jpg" (click) = "goToPizzasDoces()"/>\n\n    <div class="card-title">Pizzas Doces</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="../assets/espagueti.jpg" (click) = "goToEspaguetes()"/>\n\n    <div class="card-title">Espaguetes</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="../assets/crepe.jpg" (click) = "goToCrepes()"/>\n\n    <div class="card-title">Crepes</div>\n\n  </ion-card>\n\n\n\n</ion-content>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\categoriamassas\categoriamassas.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], CategoriamassasPage);
@@ -480,7 +480,7 @@ var PizzassalgadasPage = /** @class */ (function () {
     };
     PizzassalgadasPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-pizzassalgadas',template:/*ion-inline-start:"C:\nodespace\smartestchef\src\pages\pizzassalgadas\pizzassalgadas.html"*/'<!--\n\n  Generated template for the PizzassalgadasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Pizzas Salgadas</ion-title>\n\n    <ion-buttons end="">\n\n        <button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n          <ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n        </span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <ion-searchbar\n\n    [(ngModel)]="myInput"\n\n    [showCancelButton]="shouldShowCancel"\n\n    >\n\n  </ion-searchbar>\n\n  \n\n  <ion-content class="cards-bg">\n\n   \n\n   \n\n    <ion-card *ngFor="let produto of produtos">\n\n  \n\n      <div>\n\n        <img class="img" src="/ws/fotos/{{produto.imagem}}"/>\n\n      </div>\n\n  \n\n      <ion-card-content>\n\n        <ion-card-title>\n\n          {{produto.nome}}\n\n        </ion-card-title>\n\n        <p>\n\n          {{produto.descricao}}\n\n        </p>\n\n\n\n        <!--<ion-item>\n\n      <ion-label>Tamanho</ion-label>\n\n      <ion-select [(ngModel)]="tamanho" interface="popover">\n\n        <ion-option value="nes">Pequena</ion-option>\n\n        <ion-option value="n64">Média</ion-option>\n\n        <ion-option value="ps">Grande</ion-option>\n\n      </ion-select>\n\n    </ion-item>-->\n\n       \n\n      </ion-card-content>\n\n  \n\n      <ion-row no-padding>\n\n        <ion-col>\n\n            <p class="p1">\n\n                R$ {{produto.preco}}\n\n              </p>\n\n        </ion-col>\n\n        <ion-col text-center>\n\n          <button ion-button clear small color="danger" icon-start></button>\n\n        </ion-col>\n\n        <ion-col text-right>\n\n          <button class="button" ion-button clear small icon-start (click)="addToCart(produto)">\n\n            <ion-icon name=\'cart\'></ion-icon>\n\n           \n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n  \n\n    </ion-card>\n\n  \n\n  \n\n  \n\n  </ion-content>\n\n  \n\n  </ion-content>\n\n  \n\n  \n\n  \n\n  \n\n'/*ion-inline-end:"C:\nodespace\smartestchef\src\pages\pizzassalgadas\pizzassalgadas.html"*/,
+            selector: 'page-pizzassalgadas',template:/*ion-inline-start:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\pizzassalgadas\pizzassalgadas.html"*/'\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Pizzas Salgadas</ion-title>\n\n    <ion-buttons end="">\n\n        <button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n          <ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n        </span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <ion-searchbar\n\n    [(ngModel)]="myInput"\n\n    [showCancelButton]="shouldShowCancel"\n\n    >\n\n  </ion-searchbar>\n\n  \n\n  <ion-content class="cards-bg">\n\n   \n\n   \n\n    <ion-card *ngFor="let produto of produtos">\n\n  \n\n      <div>\n\n        <img class="img" src="/ws/fotos/{{produto.imagem}}"/>\n\n      </div>\n\n  \n\n      <ion-card-content>\n\n        <ion-card-title>\n\n          {{produto.nome}}\n\n        </ion-card-title>\n\n        <p>\n\n          {{produto.descricao}}\n\n        </p>\n\n\n\n        <!--<ion-item>\n\n      <ion-label>Tamanho</ion-label>\n\n      <ion-select [(ngModel)]="tamanho" interface="popover">\n\n        <ion-option value="nes">Pequena</ion-option>\n\n        <ion-option value="n64">Média</ion-option>\n\n        <ion-option value="ps">Grande</ion-option>\n\n      </ion-select>\n\n    </ion-item>-->\n\n       \n\n      </ion-card-content>\n\n  \n\n      <ion-row no-padding>\n\n        <ion-col>\n\n            <p class="p1">\n\n                R$ {{produto.preco}}\n\n              </p>\n\n        </ion-col>\n\n        <ion-col text-center>\n\n          <button ion-button clear small color="danger" icon-start></button>\n\n        </ion-col>\n\n        <ion-col text-right>\n\n          <button class="button" ion-button clear small icon-start (click)="addToCart(produto)">\n\n            <ion-icon name=\'cart\'></ion-icon>\n\n           \n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n  \n\n    </ion-card>\n\n  \n\n  \n\n  \n\n  </ion-content>\n\n  \n\n  </ion-content>\n\n  \n\n  \n\n  \n\n  \n\n'/*ion-inline-end:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\pizzassalgadas\pizzassalgadas.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__services_cart_service__["a" /* CartService */],
                 __WEBPACK_IMPORTED_MODULE_4__services_storage_service__["a" /* StorageService */]
@@ -560,7 +560,7 @@ var PizzasdocesPage = /** @class */ (function () {
     };
     PizzasdocesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-pizzasdoces',template:/*ion-inline-start:"C:\nodespace\smartestchef\src\pages\pizzasdoces\pizzasdoces.html"*/'<!--\n\n  Generated template for the PizzasdocesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Pizzas Doces</ion-title>\n\n    <ion-buttons end="">\n\n        <button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n          <ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n        </span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-searchbar\n\n    (ionInput)="localizarPizza()" [(ngModel)] = "txtSabor"\n\n    [showCancelButton]="shouldShowCancel" (enter)="localizarPizza()">\n\n  </ion-searchbar>\n\n  \n\n  <ion-content class="cards-bg">\n\n   \n\n   \n\n    <ion-card *ngFor="let produto of produtos">\n\n  \n\n      <div>\n\n        <img class="img" src="/ws/fotos/{{produto.imagem}}"/>\n\n      </div>\n\n  \n\n      <ion-card-content>\n\n        <ion-card-title>\n\n          {{produto.nome}}\n\n        </ion-card-title>\n\n        <p>\n\n          {{produto.descricao}}\n\n        </p>\n\n\n\n         <!--<ion-item>\n\n      <ion-label>Tamanho</ion-label>\n\n      <ion-select [(ngModel)]="tamanho" interface="popover">\n\n        <ion-option value="nes">Pequena</ion-option>\n\n        <ion-option value="n64">Média</ion-option>\n\n        <ion-option value="ps">Grande</ion-option>\n\n      </ion-select>\n\n    </ion-item>-->\n\n      \n\n      </ion-card-content>\n\n  \n\n      <ion-row no-padding>\n\n        <ion-col>\n\n            <p class="p1">\n\n                R$ {{produto.preco}}\n\n              </p>\n\n        </ion-col>\n\n        <ion-col text-center>\n\n          <button ion-button clear small color="danger" icon-start>\n\n            \n\n          </button>\n\n        </ion-col>\n\n        <ion-col text-right>\n\n          <button class="button" ion-button clear small icon-start (click)="addToCart(produto)">\n\n            <ion-icon name=\'cart\'></ion-icon>\n\n           \n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n  \n\n    </ion-card>\n\n  \n\n  \n\n  \n\n  </ion-content>\n\n  \n\n  </ion-content>\n\n  \n\n  \n\n  \n\n  \n\n\n\n'/*ion-inline-end:"C:\nodespace\smartestchef\src\pages\pizzasdoces\pizzasdoces.html"*/,
+            selector: 'page-pizzasdoces',template:/*ion-inline-start:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\pizzasdoces\pizzasdoces.html"*/'<!--\n\n  Generated template for the PizzasdocesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Pizzas Doces</ion-title>\n\n    <ion-buttons end="">\n\n        <button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n          <ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n        </span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-searchbar\n\n    (ionInput)="localizarPizza()" [(ngModel)] = "txtSabor"\n\n    [showCancelButton]="shouldShowCancel" (enter)="localizarPizza()">\n\n  </ion-searchbar>\n\n  \n\n  <ion-content class="cards-bg">\n\n   \n\n   \n\n    <ion-card *ngFor="let produto of produtos">\n\n  \n\n      <div>\n\n        <img class="img" src="/ws/fotos/{{produto.imagem}}"/>\n\n      </div>\n\n  \n\n      <ion-card-content>\n\n        <ion-card-title>\n\n          {{produto.nome}}\n\n        </ion-card-title>\n\n        <p>\n\n          {{produto.descricao}}\n\n        </p>\n\n\n\n         <!--<ion-item>\n\n      <ion-label>Tamanho</ion-label>\n\n      <ion-select [(ngModel)]="tamanho" interface="popover">\n\n        <ion-option value="nes">Pequena</ion-option>\n\n        <ion-option value="n64">Média</ion-option>\n\n        <ion-option value="ps">Grande</ion-option>\n\n      </ion-select>\n\n    </ion-item>-->\n\n      \n\n      </ion-card-content>\n\n  \n\n      <ion-row no-padding>\n\n        <ion-col>\n\n            <p class="p1">\n\n                R$ {{produto.preco}}\n\n              </p>\n\n        </ion-col>\n\n        <ion-col text-center>\n\n          <button ion-button clear small color="danger" icon-start>\n\n            \n\n          </button>\n\n        </ion-col>\n\n        <ion-col text-right>\n\n          <button class="button" ion-button clear small icon-start (click)="addToCart(produto)">\n\n            <ion-icon name=\'cart\'></ion-icon>\n\n           \n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n  \n\n    </ion-card>\n\n  \n\n  \n\n  \n\n  </ion-content>\n\n  \n\n  </ion-content>\n\n  \n\n  \n\n  \n\n  \n\n\n\n'/*ion-inline-end:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\pizzasdoces\pizzasdoces.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__services_cart_service__["a" /* CartService */],
                 __WEBPACK_IMPORTED_MODULE_4__services_storage_service__["a" /* StorageService */]
@@ -626,7 +626,7 @@ var CrepesPage = /** @class */ (function () {
     };
     CrepesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-crepes',template:/*ion-inline-start:"C:\nodespace\smartestchef\src\pages\crepes\crepes.html"*/'<!--\n\n  Generated template for the CrepesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Crepes</ion-title>\n\n    <ion-buttons end="">\n\n        <button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n          <ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n        </span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-searchbar\n\n    [(ngModel)]="myInput"\n\n    [showCancelButton]="shouldShowCancel"\n\n    >\n\n  </ion-searchbar>\n\n  \n\n  <ion-content class="cards-bg">\n\n   \n\n   \n\n    <ion-card *ngFor="let produto of produtos">\n\n  \n\n      <div>\n\n        <img class="img" src="/ws/fotos/{{produto.imagem}}"/>\n\n      </div>\n\n  \n\n      <ion-card-content>\n\n        <ion-card-title>\n\n          {{produto.nome}}\n\n        </ion-card-title>\n\n        <p>\n\n          {{produto.descricao}}\n\n        </p>\n\n       \n\n      </ion-card-content>\n\n  \n\n      <ion-row no-padding>\n\n        <ion-col>\n\n            <p class="p1">\n\n                R$ {{produto.preco}}\n\n              </p>\n\n        </ion-col>\n\n        <ion-col text-center>\n\n          <button ion-button clear small color="danger" icon-start>\n\n            \n\n          </button>\n\n        </ion-col>\n\n        <ion-col text-right>\n\n          <button class="button" ion-button clear small icon-start (click)="addToCart(produto)">\n\n            <ion-icon name=\'cart\'></ion-icon>\n\n           \n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n  \n\n    </ion-card>\n\n  \n\n  \n\n  \n\n  </ion-content>\n\n  \n\n  </ion-content>\n\n  \n\n  \n\n  \n\n  \n\n\n\n'/*ion-inline-end:"C:\nodespace\smartestchef\src\pages\crepes\crepes.html"*/,
+            selector: 'page-crepes',template:/*ion-inline-start:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\crepes\crepes.html"*/'<!--\n\n  Generated template for the CrepesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Crepes</ion-title>\n\n    <ion-buttons end="">\n\n        <button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n          <ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n        </span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-searchbar\n\n    [(ngModel)]="myInput"\n\n    [showCancelButton]="shouldShowCancel"\n\n    >\n\n  </ion-searchbar>\n\n  \n\n  <ion-content class="cards-bg">\n\n   \n\n   \n\n    <ion-card *ngFor="let produto of produtos">\n\n  \n\n      <div>\n\n        <img class="img" src="/ws/fotos/{{produto.imagem}}"/>\n\n      </div>\n\n  \n\n      <ion-card-content>\n\n        <ion-card-title>\n\n          {{produto.nome}}\n\n        </ion-card-title>\n\n        <p>\n\n          {{produto.descricao}}\n\n        </p>\n\n       \n\n      </ion-card-content>\n\n  \n\n      <ion-row no-padding>\n\n        <ion-col>\n\n            <p class="p1">\n\n                R$ {{produto.preco}}\n\n              </p>\n\n        </ion-col>\n\n        <ion-col text-center>\n\n          <button ion-button clear small color="danger" icon-start>\n\n            \n\n          </button>\n\n        </ion-col>\n\n        <ion-col text-right>\n\n          <button class="button" ion-button clear small icon-start (click)="addToCart(produto)">\n\n            <ion-icon name=\'cart\'></ion-icon>\n\n           \n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n  \n\n    </ion-card>\n\n  \n\n  \n\n  \n\n  </ion-content>\n\n  \n\n  </ion-content>\n\n  \n\n  \n\n  \n\n  \n\n\n\n'/*ion-inline-end:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\crepes\crepes.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__services_cart_service__["a" /* CartService */],
                 __WEBPACK_IMPORTED_MODULE_4__services_storage_service__["a" /* StorageService */]
@@ -691,7 +691,7 @@ var EspaguetesPage = /** @class */ (function () {
     };
     EspaguetesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-espaguetes',template:/*ion-inline-start:"C:\nodespace\smartestchef\src\pages\espaguetes\espaguetes.html"*/'<!--\n\n  Generated template for the EspaguetesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Espaguetes</ion-title>\n\n    <ion-buttons end="">\n\n        <button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n          <ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n        </span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-searchbar\n\n    [(ngModel)]="myInput"\n\n    [showCancelButton]="shouldShowCancel"\n\n    >\n\n  </ion-searchbar>\n\n  \n\n  <ion-content class="cards-bg">\n\n   \n\n   \n\n    <ion-card *ngFor="let produto of produtos">\n\n  \n\n      <div>\n\n        <img class="img" src="/ws/fotos/{{produto.imagem}}"/>\n\n      </div>\n\n  \n\n      <ion-card-content>\n\n        <ion-card-title>\n\n          {{produto.nome}}\n\n        </ion-card-title>\n\n        <p>\n\n          {{produto.descricao}}\n\n        </p>\n\n        \n\n      </ion-card-content>\n\n  \n\n      <ion-row no-padding>\n\n        <ion-col>\n\n            <p class="p1">\n\n                R$ {{produto.preco}}\n\n              </p>\n\n        </ion-col>\n\n        <ion-col text-center>\n\n          <button ion-button clear small color="danger" icon-start>\n\n            \n\n          </button>\n\n        </ion-col>\n\n        <ion-col text-right>\n\n          <button class="button" ion-button clear small icon-start (click)="addToCart(produto)">\n\n            <ion-icon name=\'cart\'></ion-icon>\n\n           \n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n  \n\n    </ion-card>\n\n  \n\n  \n\n  \n\n  </ion-content>\n\n  \n\n  </ion-content>\n\n  \n\n  \n\n  \n\n  \n\n\n\n'/*ion-inline-end:"C:\nodespace\smartestchef\src\pages\espaguetes\espaguetes.html"*/,
+            selector: 'page-espaguetes',template:/*ion-inline-start:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\espaguetes\espaguetes.html"*/'<!--\n\n  Generated template for the EspaguetesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Espaguetes</ion-title>\n\n    <ion-buttons end="">\n\n        <button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n          <ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n        </span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-searchbar\n\n    [(ngModel)]="myInput"\n\n    [showCancelButton]="shouldShowCancel"\n\n    >\n\n  </ion-searchbar>\n\n  \n\n  <ion-content class="cards-bg">\n\n   \n\n   \n\n    <ion-card *ngFor="let produto of produtos">\n\n  \n\n      <div>\n\n        <img class="img" src="/ws/fotos/{{produto.imagem}}"/>\n\n      </div>\n\n  \n\n      <ion-card-content>\n\n        <ion-card-title>\n\n          {{produto.nome}}\n\n        </ion-card-title>\n\n        <p>\n\n          {{produto.descricao}}\n\n        </p>\n\n        \n\n      </ion-card-content>\n\n  \n\n      <ion-row no-padding>\n\n        <ion-col>\n\n            <p class="p1">\n\n                R$ {{produto.preco}}\n\n              </p>\n\n        </ion-col>\n\n        <ion-col text-center>\n\n          <button ion-button clear small color="danger" icon-start>\n\n            \n\n          </button>\n\n        </ion-col>\n\n        <ion-col text-right>\n\n          <button class="button" ion-button clear small icon-start (click)="addToCart(produto)">\n\n            <ion-icon name=\'cart\'></ion-icon>\n\n           \n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n  \n\n    </ion-card>\n\n  \n\n  \n\n  \n\n  </ion-content>\n\n  \n\n  </ion-content>\n\n  \n\n  \n\n  \n\n  \n\n\n\n'/*ion-inline-end:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\espaguetes\espaguetes.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__services_cart_service__["a" /* CartService */],
                 __WEBPACK_IMPORTED_MODULE_4__services_storage_service__["a" /* StorageService */]
@@ -707,47 +707,6 @@ var EspaguetesPage = /** @class */ (function () {
 /***/ }),
 
 /***/ 168:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EspaguetesPageModule", function() { return EspaguetesPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__espaguetes__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-var EspaguetesPageModule = /** @class */ (function () {
-    function EspaguetesPageModule() {
-    }
-    EspaguetesPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__espaguetes__["a" /* EspaguetesPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__espaguetes__["a" /* EspaguetesPage */]),
-                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */]
-            ],
-        })
-    ], EspaguetesPageModule);
-    return EspaguetesPageModule;
-}());
-
-//# sourceMappingURL=espaguetes.module.js.map
-
-/***/ }),
-
-/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -788,15 +747,15 @@ var CrepesPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 170:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PizzasdocesPageModule", function() { return PizzasdocesPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EspaguetesPageModule", function() { return EspaguetesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pizzasdoces__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__espaguetes__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -808,28 +767,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var PizzasdocesPageModule = /** @class */ (function () {
-    function PizzasdocesPageModule() {
+var EspaguetesPageModule = /** @class */ (function () {
+    function EspaguetesPageModule() {
     }
-    PizzasdocesPageModule = __decorate([
+    EspaguetesPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__pizzasdoces__["a" /* PizzasdocesPage */],
+                __WEBPACK_IMPORTED_MODULE_2__espaguetes__["a" /* EspaguetesPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__pizzasdoces__["a" /* PizzasdocesPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__espaguetes__["a" /* EspaguetesPage */]),
                 __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */]
             ],
         })
-    ], PizzasdocesPageModule);
-    return PizzasdocesPageModule;
+    ], EspaguetesPageModule);
+    return EspaguetesPageModule;
 }());
 
-//# sourceMappingURL=pizzasdoces.module.js.map
+//# sourceMappingURL=espaguetes.module.js.map
 
 /***/ }),
 
-/***/ 171:
+/***/ 170:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -837,7 +796,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuPageModule", function() { return MenuPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menu__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menu__ = __webpack_require__(171);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -867,16 +826,16 @@ var MenuPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 172:
+/***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cardapiobebidas_cardapiobebidas__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cardapiobebidas_cardapiobebidas__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__categoriamassas_categoriamassas__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cardapiosobremesas_cardapiosobremesas__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cardapiosobremesas_cardapiosobremesas__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__carrinho_carrinho__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -915,7 +874,7 @@ var MenuPage = /** @class */ (function () {
     };
     MenuPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-menu',template:/*ion-inline-start:"C:\nodespace\smartestchef\src\pages\menu\menu.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Menu</ion-title>\n\n   <ion-buttons end="">\n\n			<button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n				<ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n			</span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n		</ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="card-background-page">\n\n  <ion-card>\n\n    <img src="../assets/massas.jpg" (click) = "goToCategorias()"/>\n\n    <div class="card-title">Massas</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="../assets/bebidas.jpg" (click) = "goToBebidas()"/>\n\n    <div class="card-title">Bebidas</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="../assets/sobremesa.jpg" (click) = "goToSobremesas()"/>\n\n    <div class="card-title">Sobremesas</div>\n\n  </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\nodespace\smartestchef\src\pages\menu\menu.html"*/,
+            selector: 'page-menu',template:/*ion-inline-start:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\menu\menu.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Menu</ion-title>\n\n   <ion-buttons end="">\n\n			<button icon-only="" ion-button="" (click) = "goToCarrinho()"><span>\n\n				<ion-icon name="cart" role="img"  aria-label="cart" ng-reflect-name="cart"></ion-icon>\n\n			</span><div class="button-effect" style="transform: translate3d(-20px, -15px, 0px) scale(1); height: 64px; width: 64px; opacity: 0; transition: transform 260ms ease 0s, opacity 182ms ease 78ms;"></div></button>\n\n		</ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="card-background-page">\n\n  <ion-card>\n\n    <img src="../assets/massas.jpg" (click) = "goToCategorias()"/>\n\n    <div class="card-title">Massas</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="../assets/bebidas.jpg" (click) = "goToBebidas()"/>\n\n    <div class="card-title">Bebidas</div>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <img src="../assets/sobremesa.jpg" (click) = "goToSobremesas()"/>\n\n    <div class="card-title">Sobremesas</div>\n\n  </ion-card>\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\menu\menu.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], MenuPage);
@@ -923,6 +882,47 @@ var MenuPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=menu.js.map
+
+/***/ }),
+
+/***/ 172:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PizzasdocesPageModule", function() { return PizzasdocesPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pizzasdoces__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var PizzasdocesPageModule = /** @class */ (function () {
+    function PizzasdocesPageModule() {
+    }
+    PizzasdocesPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__pizzasdoces__["a" /* PizzasdocesPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__pizzasdoces__["a" /* PizzasdocesPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */]
+            ],
+        })
+    ], PizzasdocesPageModule);
+    return PizzasdocesPageModule;
+}());
+
+//# sourceMappingURL=pizzasdoces.module.js.map
 
 /***/ }),
 
@@ -1036,14 +1036,14 @@ var StorageService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_menu_menu_module__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_cardapiobebidas_cardapiobebidas_module__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_cardapiosobremesas_cardapiosobremesas_module__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_menu_menu_module__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_cardapiobebidas_cardapiobebidas_module__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_cardapiosobremesas_cardapiosobremesas_module__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_categoriamassas_categoriamassas_module__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_pizzassalgadas_pizzassalgadas_module__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_pizzasdoces_pizzasdoces_module__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_crepes_crepes_module__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_espaguetes_espaguetes_module__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_pizzasdoces_pizzasdoces_module__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_crepes_crepes_module__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_espaguetes_espaguetes_module__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_carrinho_carrinho_module__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_cart_service__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_storage_service__ = __webpack_require__(22);
@@ -1084,15 +1084,15 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/cardapiobebidas/cardapiobebidas.module#CardapiobebidasPageModule', name: 'CardapiobebidasPage', segment: 'cardapiobebidas', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/cardapiosobremesas/cardapiosobremesas.module#CardapiosobremesasPageModule', name: 'CardapiosobremesasPage', segment: 'cardapiosobremesas', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cardapiobebidas/cardapiobebidas.module#CardapiobebidasPageModule', name: 'CardapiobebidasPage', segment: 'cardapiobebidas', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/carrinho/carrinho.module#CarrinhoPageModule', name: 'CarrinhoPage', segment: 'carrinho', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/categoriamassas/categoriamassas.module#CategoriamassasPageModule', name: 'CategoriamassasPage', segment: 'categoriamassas', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/checkout/checkout.module#CheckoutPageModule', name: 'CheckoutPage', segment: 'checkout', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/espaguetes/espaguetes.module#EspaguetesPageModule', name: 'EspaguetesPage', segment: 'espaguetes', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/crepes/crepes.module#CrepesPageModule', name: 'CrepesPage', segment: 'crepes', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/pizzasdoces/pizzasdoces.module#PizzasdocesPageModule', name: 'PizzasdocesPage', segment: 'pizzasdoces', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/espaguetes/espaguetes.module#EspaguetesPageModule', name: 'EspaguetesPage', segment: 'espaguetes', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/pizzasdoces/pizzasdoces.module#PizzasdocesPageModule', name: 'PizzasdocesPage', segment: 'pizzasdoces', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/pizzassalgadas/pizzassalgadas.module#PizzassalgadasPageModule', name: 'PizzassalgadasPage', segment: 'pizzassalgadas', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/resultadobusca/resultadobusca.module#ResultadobuscaPageModule', name: 'ResultadobuscaPage', segment: 'resultadobusca', priority: 'low', defaultHistory: [] }
                     ]
@@ -1242,7 +1242,7 @@ var CartService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_menu_menu__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_menu_menu__ = __webpack_require__(171);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1268,7 +1268,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\nodespace\smartestchef\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\nodespace\smartestchef\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -1335,7 +1335,7 @@ var CarrinhoPage = /** @class */ (function () {
     };
     CarrinhoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-carrinho',template:/*ion-inline-start:"C:\nodespace\smartestchef\src\pages\carrinho\carrinho.html"*/'<!--\n\n  Generated template for the CarrinhoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Carrinho</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n\n\n        <ion-item *ngFor="let item of itens">\n\n          <ion-thumbnail item-start>\n\n            <img src="/ws/fotos/{{item.produto.imagem}}">\n\n          </ion-thumbnail>\n\n          <h2>{{item.produto.nome}}</h2>\n\n          <p>R${{item.produto.preco}}</p>\n\n          <p>Tamanho</p>\n\n          <ion-row>\n\n          <ion-buttons>\n\n              <button class="button1" icon-only="" ion-button="" (click)="decreaseQuantity(item.produto)"> \n\n                <ion-icon  name="remove-circle" ></ion-icon>\n\n              </button>\n\n            </ion-buttons>\n\n            <p class="p1">{{item.quantidade}}</p>\n\n            <ion-buttons>\n\n                <button class="button2" icon-only="" ion-button="" (click)="increaseQuantity(item.produto)">\n\n                  <ion-icon name="add-circle" ></ion-icon>\n\n                </button>\n\n              </ion-buttons>\n\n            </ion-row>\n\n        </ion-item> \n\n\n\n        \n\n          \n\n        \n\n    \n\n      </ion-list>\n\n    \n\n    </ion-content>\n\n\n\n        <ion-footer class="footer">\n\n          <ion-item *ngIf="total() <= 0">\n\n            <h2>Seu carrinho está vazio</h2>\n\n          </ion-item>\n\n          <span *ngIf="total() > 0">\n\n            <p class="p2">Total: R${{total()}}</p>            \n\n          </span>\n\n          <button class="b" ion-button full (click)="checkout()">Continuar Comprando</button>\n\n        </ion-footer>\n\n     \n\n  '/*ion-inline-end:"C:\nodespace\smartestchef\src\pages\carrinho\carrinho.html"*/,
+            selector: 'page-carrinho',template:/*ion-inline-start:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\carrinho\carrinho.html"*/'<!--\n\n  Generated template for the CarrinhoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Carrinho</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n\n\n        <ion-item *ngFor="let item of itens">\n\n          <ion-thumbnail item-start>\n\n            <img src="/ws/fotos/{{item.produto.imagem}}">\n\n          </ion-thumbnail>\n\n          <h2>{{item.produto.nome}}</h2>\n\n          <p>R${{item.produto.preco}}</p>\n\n          <p>Tamanho</p>\n\n          <ion-row>\n\n          <ion-buttons>\n\n              <button class="button1" icon-only="" ion-button="" (click)="decreaseQuantity(item.produto)"> \n\n                <ion-icon  name="remove-circle" ></ion-icon>\n\n              </button>\n\n            </ion-buttons>\n\n            <p class="p1">{{item.quantidade}}</p>\n\n            <ion-buttons>\n\n                <button class="button2" icon-only="" ion-button="" (click)="increaseQuantity(item.produto)">\n\n                  <ion-icon name="add-circle" ></ion-icon>\n\n                </button>\n\n              </ion-buttons>\n\n            </ion-row>\n\n        </ion-item> \n\n\n\n        \n\n          \n\n        \n\n    \n\n      </ion-list>\n\n    \n\n    </ion-content>\n\n\n\n        <ion-footer class="footer">\n\n          <ion-item *ngIf="total() <= 0">\n\n            <h2>Seu carrinho está vazio</h2>\n\n          </ion-item>\n\n          <span *ngIf="total() > 0">\n\n            <p class="p2">Total: R${{total()}}</p>            \n\n          </span>\n\n          <button class="b" ion-button full (click)="checkout()">Continuar Comprando</button>\n\n        </ion-footer>\n\n     \n\n  '/*ion-inline-end:"C:\Users\pedrh\OneDrive\Área de Trabalho\Projetos Git\smartestchef\src\pages\carrinho\carrinho.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_2__services_cart_service__["a" /* CartService */],
                 __WEBPACK_IMPORTED_MODULE_3__services_storage_service__["a" /* StorageService */]

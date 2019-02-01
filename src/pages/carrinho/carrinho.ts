@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Produto } from "../../models/produto";
 import { CartService } from "../../services/cart.service";
 import { CartItem } from "../../models/cart-item";
-import { MenuPage } from "../../pages/menu/menu";
 import { StorageService } from "../../services/storage.service";
 
 /**
