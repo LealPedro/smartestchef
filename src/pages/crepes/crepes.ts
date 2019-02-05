@@ -43,4 +43,8 @@ export class CrepesPage {
     this.navCtrl.push('CarrinhoPage');
   }
 
+  goToCarrinho() {
+    this.navCtrl.push(CarrinhoPage);
+  }
+
 }

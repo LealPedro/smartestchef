@@ -64,4 +64,9 @@ export class PizzasdocesPage {
     this.cartService.addProduto(produto);
     this.navCtrl.push('CarrinhoPage');
   }
+
+  goToCarrinho() {
+    this.navCtrl.push(CarrinhoPage);
+  }
+
 }

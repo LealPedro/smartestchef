@@ -19,30 +19,26 @@
 </ion-header>
 <ion-content padding>
 
-<ion-searchbar
-[(ngModel)]="myInput"
-[showCancelButton]="shouldShowCancel"
->
-</ion-searchbar>
+
 
 <ion-content class="card-background-page">
-  <ion-card>
-    <img src="../assets/pizzasalgada.jpg" (click) = "goToPizzasSalgadas()"/>
+  <ion-card (click) = "goToPizzasSalgadas()">
+    <img src="../assets/pizzasalgada.jpg" />
     <div class="card-title">Pizzas Salgadas</div>
   </ion-card>
 
-  <ion-card>
-    <img src="../assets/pizzadoce.jpg" (click) = "goToPizzasDoces()"/>
+  <ion-card (click) = "goToPizzasDoces()">
+    <img src="../assets/pizzadoce.jpg" />
     <div class="card-title">Pizzas Doces</div>
   </ion-card>
 
-  <ion-card>
-    <img src="../assets/espagueti.jpg" (click) = "goToEspaguetes()"/>
+  <ion-card (click) = "goToEspaguetes()">
+    <img src="../assets/espagueti.jpg" />
     <div class="card-title">Espaguetes</div>
   </ion-card>
 
-  <ion-card>
-    <img src="../assets/crepe.jpg" (click) = "goToCrepes()"/>
+  <ion-card (click) = "goToCrepes()">
+    <img src="../assets/crepe.jpg" />
     <div class="card-title">Crepes</div>
   </ion-card>
 

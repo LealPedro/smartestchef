@@ -15,9 +15,7 @@ export class MenuPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MenuPage');
-  }
+  ionViewDidLoad() {}
 
   goToBebidas() {
     this.navCtrl.push(CardapiobebidasPage);

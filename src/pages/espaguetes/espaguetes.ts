@@ -44,4 +44,8 @@ export class EspaguetesPage {
     this.navCtrl.push('CarrinhoPage');
   }
 
+  goToCarrinho() {
+    this.navCtrl.push(CarrinhoPage);
+  }
+
 }

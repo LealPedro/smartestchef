@@ -45,6 +45,10 @@ export class PizzassalgadasPage {
     this.navCtrl.push('CarrinhoPage');
   }
 
+  goToCarrinho() {
+    this.navCtrl.push(CarrinhoPage);
+  }
+
   /*addProduto() {
     p = new Produto();
     p.id= this.id;

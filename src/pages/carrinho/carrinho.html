@@ -48,11 +48,13 @@
         <ion-footer class="footer">
           <ion-item *ngIf="total() <= 0">
             <h2>Seu carrinho está vazio</h2>
+            <button class="b" ion-button full (click)="goOn()">Comprar</button>
           </ion-item>
           <span *ngIf="total() > 0">
-            <p class="p2">Total: R${{total()}}</p>            
-          </span>
-          <button class="b" ion-button full (click)="checkout()">Continuar Comprando</button>
+            <p class="p2">Total: R${{total()}}</p>         
+            <button class="b" ion-button full (click)="goOn()">Continuar Comprando</button>
+            <button class="b" ion-button full (click)="checkout()">Finalizar Compra</button>
+        </span>
         </ion-footer>
      
   

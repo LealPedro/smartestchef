@@ -43,4 +43,8 @@ export class CardapiosobremesasPage {
     this.navCtrl.push('CarrinhoPage');
   }
 
+  goToCarrinho() {
+    this.navCtrl.push(CarrinhoPage);
+  }
+
 }

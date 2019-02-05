@@ -8,7 +8,7 @@
   "proxies": [
     {
       "path": "/ws",
-      "proxyUrl": "http://localhost:8080/projetoFinal"
+      "proxyUrl": "http://localhost:8080/final"
     }
   ]
 }
